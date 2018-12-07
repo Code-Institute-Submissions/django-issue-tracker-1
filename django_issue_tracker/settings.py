@@ -26,8 +26,8 @@ SECRET_KEY = 'rh3nf%=+uz@ze_t)nmuyi-+#kwh(555kxuvz)l!=4*&j%&i#7g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-issue-tracker-cushor90.c9users.io',
-                'ci-issue-tracker.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+                 os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'django_issue_tracker.wsgi.application'
 #    }
 #}
 
-DATABASES = {'default': dj_database_url.parse("postgres://rcjnahzkbkzoni:cecc1330a921665caf6185411af737d4121fbd0f5d2183a8fe8f72fa9be7a02d@ec2-54-246-85-234.eu-west-1.compute.amazonaws.com:5432/d7cqdqafik4k3n")}
+DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
