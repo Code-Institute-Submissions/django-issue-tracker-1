@@ -1,16 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from .models import Item
 from .forms import ItemForm
-# Create your views here.
-
-    
-
-from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
-from .models import Item
-from .forms import ItemForm
 
 
-# Create your views here.
 def get_issue_tracker_list(request):
     results = Item.objects.all()
     return render(request, "issue_tracker.html", {'items': results})
