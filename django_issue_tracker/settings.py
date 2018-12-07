@@ -76,13 +76,14 @@ WSGI_APPLICATION = 'django_issue_tracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
+DATABASES = {'default': dj_database_url.parse("postgres://rcjnahzkbkzoni:cecc1330a921665caf6185411af737d4121fbd0f5d2183a8fe8f72fa9be7a02d@ec2-54-246-85-234.eu-west-1.compute.amazonaws.com:5432/d7cqdqafik4k3n")}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
