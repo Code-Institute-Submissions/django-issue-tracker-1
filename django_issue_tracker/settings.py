@@ -26,7 +26,8 @@ SECRET_KEY = 'rh3nf%=+uz@ze_t)nmuyi-+#kwh(555kxuvz)l!=4*&j%&i#7g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-issue-tracker-cushor90.c9users.io']
+ALLOWED_HOSTS = ['django-issue-tracker-cushor90.c9users.io',
+                'ci-issue-tracker.herokuapp.com']
 
 
 # Application definition
