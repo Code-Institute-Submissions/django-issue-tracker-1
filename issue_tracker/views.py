@@ -26,7 +26,7 @@ def edit_an_issue(request, id):
         form = ItemForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
-            return (get_issue_tracker_list)
+            return redirect(get_issue_tracker_list)
     else:
         form = ItemForm(instance=item)
     return render(request, "issue_form.html", {'form': form})
