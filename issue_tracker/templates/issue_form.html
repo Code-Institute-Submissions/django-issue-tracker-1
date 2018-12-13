@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+{% extends 'base.html' %}
+
+{% block page_title %}Add Issue{% endblock %}
+
+{% block page_heading %}Add an issue {% endblock %}
+
 <body>
     
-    <h1>I need to do this!</h1>
-    
+{% block content %}
     <form method="POST">
         
         {% csrf_token %}
         
         {{ form.as_p }}
       
-        <button type="submit">Save</button>
+        <button type="submit" class="btn btn-default">Save</button>
 
     </form>
     
 </body>
-</html>
+{% endblock %}

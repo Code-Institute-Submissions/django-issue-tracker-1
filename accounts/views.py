@@ -71,3 +71,4 @@ def user_profile(request):
     """ The users profile page """
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
+    
