@@ -2,5 +2,3 @@ language: python
 python:
 - "2.7.6"
 install: "pip install -r requirements.txt"
-script:
-- SECRET_KEY="&fhj)=lv8nbv%+b9(p=s9-@d9au$hw*@v1^hkc12t+am_hn3ja" ./manage.py test
