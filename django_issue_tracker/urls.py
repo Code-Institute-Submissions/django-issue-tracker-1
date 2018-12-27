@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^edit/(?P<id>\d+)$', edit_an_issue),
     url(r'^toggle/(?P<id>\d+)$', toggle_status),
     
-    url(r'^posts/', include('posts.urls')),
+    url(r'^$', RedirectView.as_view(url='posts/')),
+    url(r'posts/', include('posts.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]
