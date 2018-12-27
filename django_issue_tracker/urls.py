@@ -16,9 +16,7 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic import RedirectView
 from django.views.static import serve
-from posts import urls as urls_posts
 from .settings import MEDIA_ROUTE
 from issue_tracker.views import get_issue_tracker_list, create_an_issue, edit_an_issue, toggle_status
 from accounts import urls as accounts_urls
@@ -27,6 +25,7 @@ from accounts.views import index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', index, name="index"),
     url(r'^accounts/', include(accounts_urls)),
     
     
@@ -35,8 +34,8 @@ urlpatterns = [
     url(r'^edit/(?P<id>\d+)$', edit_an_issue),
     url(r'^toggle/(?P<id>\d+)$', toggle_status),
     
-    url(r'^$', RedirectView.as_view(url='posts/')),
+    
     url(r'posts/', include('posts.urls')),
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROUTE }),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROUTE}),
 
 ]
