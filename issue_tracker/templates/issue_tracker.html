@@ -20,13 +20,13 @@
             <td>
                 <form method="POST" action="toggle/{{ item.id }}">
                     {% csrf_token %}
-                    <input type="submit" value="Toggle">
+                    <button type="submit" class="btn btn-default">Toggle</button>
                 </form>
             </td>
 
             <td>
                 <form method="GET" action="edit/{{ item.id }}">
-                    <input type="submit" value="Edit">
+                    <button type="submit" class="btn btn-default">Edit</button>
                 </form>
             </td>
         </tr>
