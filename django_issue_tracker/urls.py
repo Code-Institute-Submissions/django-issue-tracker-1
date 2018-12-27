@@ -18,7 +18,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import RedirectView
 from django.views.static import serve
-from .settings import MEDIA_ROOT
+from .settings import MEDIA_ROUTE
 from issue_tracker.views import get_issue_tracker_list, create_an_issue, edit_an_issue, toggle_status
 from accounts import urls as accounts_urls
 from accounts.views import index
@@ -35,7 +35,9 @@ urlpatterns = [
     url(r'^edit/(?P<id>\d+)$', edit_an_issue),
     url(r'^toggle/(?P<id>\d+)$', toggle_status),
     
+    
     url(r'^$', RedirectView.as_view(url='posts/')),
-    url(r'^posts/', include('posts.urls')),
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    url(r'posts/', include('posts.urls')),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROUTE}),
+
 ]
