@@ -22,7 +22,7 @@ from .settings import MEDIA_ROUTE
 from issue_tracker.views import get_issue_tracker_list, create_an_issue, edit_an_issue, toggle_status
 from accounts import urls as accounts_urls
 from accounts.views import index
-
+from posts import urls as posts_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -36,8 +36,7 @@ urlpatterns = [
     url(r'^toggle/(?P<id>\d+)$', toggle_status),
     
     
-    url(r'^$', RedirectView.as_view(url='posts/')),
-    url(r'posts/', include('posts.urls')),
+    url(r'posts/', include(posts_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROUTE}),
 
 ]
