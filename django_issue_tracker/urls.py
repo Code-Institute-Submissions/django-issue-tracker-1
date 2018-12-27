@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import RedirectView
@@ -35,6 +36,6 @@ urlpatterns = [
     url(r'^toggle/(?P<id>\d+)$', toggle_status),
     
     url(r'^$', RedirectView.as_view(url='posts/')),
-    url(r'posts/', include('posts.urls')),
+    url(r'^posts/', include('posts.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 ]
