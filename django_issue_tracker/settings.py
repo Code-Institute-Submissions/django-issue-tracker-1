@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'issue_tracker',
     'accounts',
     'posts',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -147,7 +148,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-MEDIA_ROUTE = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
