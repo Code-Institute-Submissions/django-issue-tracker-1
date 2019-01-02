@@ -23,6 +23,7 @@ from accounts import urls as accounts_urls
 from products import urls as urls_products
 from cart import urls as urls_cart
 from search import urls as urls_search
+from checkout import urls as urls_checkout
 from posts import urls as posts_urls
 from accounts.views import index
 from products.views import all_products
@@ -36,6 +37,7 @@ urlpatterns = [
     url(r'^products/', include(urls_products)),
     url(r'^cart/', include(urls_cart)),
     url(r'^search/', include(urls_search)),
+    url(r'^checkout/', include(urls_checkout)),
 
 
     url(r'^issues$', get_issue_tracker_list),
