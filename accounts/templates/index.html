@@ -4,3 +4,68 @@
 
 {% block page_heading %}Home{% endblock %}
 
+{% block content %}
+
+<body class="index">
+<section class="blue-background">
+    <div class="two-columns">
+        <div class="layout-two-text">
+            <p>Issue Tracker lets you work collaboratievely and get more done.</p>
+            <button class="btn btn-success">Sign Up - Right Now!</button>
+        </div>
+        <div class="layout-two-image">
+            <img src="/static/img/plannerimg.jpg"></img>
+        </div>
+    </div>
+</section>
+
+<section class="teams">
+    <div class="two-columns">
+        <div class="layout-three-text">
+            <p>Work with any team </p>
+            <p class="subtitle">Whether it’s for work, a side project or even the next family vacation, Trello helps your team stay organized.</p>
+            
+            <a class="btn btn-primary" href="{% url 'registration' %}">Start Doing --></a>
+            
+            
+        </div>
+        <div class="layout-three-image">
+            <img src="/static/img/calender.jpg"></img>
+        </div>
+    </div>
+</section>
+
+<section class="info">
+    <div class="two-columns">
+        <div class="layout-four-image">
+            <img src="/static/img/whatsapp-3012138_960_720.png"></img>
+        </div>
+        <div class="layout-four-text">
+            <p>Information at a glance</p>
+            <p class="subtitle">Dive into the details by adding comments, attachments, due dates, and more directly to Trello cards. Collaborate on projects from beginning to end.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="features">
+    <div class="two-columns">
+        <div class="layout-five-image">
+            <h1>maybe 3 columns with features here</h1>
+        </div>
+        <div class="layout-six-image">
+            <h1>maybe 3 columns with features here</h1>
+        </div>
+        <div class="layout-seven-image">
+            <h1>maybe 3 columns with features here</h1>
+        </div>
+    </div>
+</section>
+
+
+</body>
+
+
+{% endblock %}
+
+
