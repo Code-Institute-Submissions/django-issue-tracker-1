@@ -6,6 +6,13 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
+<p>Issue Tracker</p>
+<p>Post and rate New Issues</p>
+
+{%  else %}
+
 <body class="index">
 <section class="blue-background">
     <div class="two-columns">
@@ -48,23 +55,8 @@
 </section>
 
 
-<section class="features">
-    <div class="two-columns">
-        <div class="layout-five-image">
-            <h1>maybe 3 columns with features here</h1>
-        </div>
-        <div class="layout-six-image">
-            <h1>maybe 3 columns with features here</h1>
-        </div>
-        <div class="layout-seven-image">
-            <h1>maybe 3 columns with features here</h1>
-        </div>
-    </div>
-</section>
-
-
 </body>
-
+{% endif %}
 
 {% endblock %}
 
