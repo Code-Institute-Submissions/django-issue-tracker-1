@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from posts.models import Post
 from posts.forms import BlogPostForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def get_posts(request):
     """
     create a view that will return a list of posts

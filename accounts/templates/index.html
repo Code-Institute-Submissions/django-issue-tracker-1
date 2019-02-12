@@ -8,8 +8,25 @@
 
 {% if user.is_authenticated %}
 
-<p>Issue Tracker</p>
-<p>Post and rate New Issues</p>
+<a href="{% url 'get_issue_tracker_list' %}">
+<div class="content">
+    <img src="/media/img/graph.png"></img>
+    <div class="content1">
+        <p>Issue Tracker</p>
+    </div>
+</div>
+</a>
+
+<a href="{% url 'get_posts' %}">
+<div class="content">
+    <img src="/media/img/post and rate.jpg"></img>
+    <div class="content2">
+        <p>Post and rate New Issues</p>
+    </div>
+</div>
+</a>
+
+
 
 {%  else %}
 
@@ -36,7 +53,7 @@
             
         </div>
         <div class="layout-three-image">
-            <img src="/media/img/whatsapp-3012138_960_720.png"></img>
+            <img src="/media/img/calender.jpg"></img>
         </div>
     </div>
 </section>
@@ -44,11 +61,11 @@
 <section class="info">
     <div class="two-columns">
         <div class="layout-four-image">
-            <img src="/static/img/whatsapp-3012138_960_720.png"></img>
+            <img src="/media/img/whatsapp-3012138_960_720.png"></img>
         </div>
         <div class="layout-four-text">
             <p>Information at a glance</p>
-            <p class="subtitle">Dive into the details by adding comments, attachments, due dates, and more directly to Trello cards. Collaborate on projects from beginning to end.</p>
+            <p class="subtitle">Dive into the details by adding comments, attachments, due dates, and more directly to the issue tracker. Collaborate on projects from beginning to end.</p>
         </div>
     </div>
 </section>

@@ -4,10 +4,10 @@ from .models import Item
 
 class TestViews(TestCase):
 
-    def test_get_home_page(self):
-        page = self.client.get("/")
+    def test_get_issues_page(self):
+        page = self.client.get("/issues")
         self.assertEqual(page.status_code, 200)
-        self.assertTemplateUsed(page, "index.html")
+        self.assertTemplateUsed(page, "issue_tracker.html")
     
     def test_get_add_item_page(self):
         page = self.client.get("/add")

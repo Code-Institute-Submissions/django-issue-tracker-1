@@ -18,12 +18,13 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.views import static
 from .settings import MEDIA_ROOT
-from issue_tracker.views import get_issue_tracker_list, create_an_issue, edit_an_issue, toggle_status
+from issue_tracker.views import get_issue_tracker_list
 from accounts import urls as accounts_urls
 from products import urls as urls_products
 from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
+from issue_tracker import urls as urls_issue_tracker
 from posts import urls as posts_urls
 from accounts.views import index
 from products.views import all_products
@@ -40,10 +41,7 @@ urlpatterns = [
     url(r'^checkout/', include(urls_checkout)),
 
 
-    url(r'^issues$', get_issue_tracker_list),
-    url(r'^add$', create_an_issue),
-    url(r'^edit/(?P<id>\d+)$', edit_an_issue),
-    url(r'^toggle/(?P<id>\d+)$', toggle_status),
+    url(r'^issues/', include(urls_issue_tracker)),
     
     
     url(r'posts/', include(posts_urls)),
