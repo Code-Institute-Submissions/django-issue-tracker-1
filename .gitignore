@@ -5,5 +5,4 @@ __pycache__/
 env.pyenv.py
 env.py
 *.png
-static/
 media/
