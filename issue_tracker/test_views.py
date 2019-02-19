@@ -5,12 +5,12 @@ from .models import Item
 class TestViews(TestCase):
 
     def test_get_issues_page(self):
-        page = self.client.get("/issues")
+        page = self.client.get("/accounts/login/?next=/issues/")
         self.assertEqual(page.status_code, 200)
-        self.assertTemplateUsed(page, "issue_tracker.html")
+        self.assertTemplateUsed(page, "login.html")
     
     def test_get_add_item_page(self):
-        page = self.client.get("/add")
+        page = self.client.get("/issues/add")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "issue_form.html")
     
@@ -18,7 +18,7 @@ class TestViews(TestCase):
         item = Item(name="Create a Test")
         item.save()
 
-        page = self.client.get("/edit/{0}".format(item.id))
+        page = self.client.get("/issues/edit/{0}".format(item.id))
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "issue_form.html")
     
