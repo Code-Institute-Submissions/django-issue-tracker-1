@@ -9,6 +9,7 @@ def get_issue_tracker_list(request):
     return render(request, "issue_tracker.html", {'items': results})
 
 
+
 def create_an_issue(request):
     if request.method == "POST":
         form = ItemForm(request.POST, request.FILES)
@@ -38,3 +39,4 @@ def toggle_status(request, id):
     item.done = not item.done
     item.save()
     return redirect(get_issue_tracker_list)
+    
