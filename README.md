@@ -17,9 +17,10 @@ The create, remove, update and delete functions
 the add photo, log views
 and finally the shopping cart function which uses AWS
 
-login allows users to see their specific account details
+login allows users to see their account details
 the shopping cart allows the user to purchase multiple access
-the upvote and complete allows users to know which tasks have been completed
+to see and increase the views of each post
+it also allows users to know which tasks have been completed
 
 
 
@@ -29,40 +30,30 @@ stripe for the shopping cart
 gunicorn to comunicate with heroku
 heroku to host the app
 
-JQuery
-The project uses JQuery to simplify DOM manipulation.
+The app uses bootstrap, jquery and fontawesome to improve the user exerience
+by enhancing forms, menues and icons.
+
 Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+I have tested all parts of the product by submiting forms and using the crud functions.
+The mian testing completed was using the django automated test framework
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+
+the app is deployed on heroku and has also has been pushed to github. To deploy to heroku, I had
+to make sure all of the environment variables were correct throughout the code, heroku and aws
+I had to scale dynos, create a procfile and requirements.txt file. 
+
+The first time I pushed my files to github, aws blocked my account becuase there was an error
+in my gitignore file and i pushed my aws keys. I changed all of the keys, ignored my env.py and 
+a few other files and then repushed successfully.
+
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
 
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+the version deployed in heroku uses postrgres as the database 
+the version which isnt deployed needs to have the env uncommented in the settings.py file
+so that it can use djdatabseurl to run the databse from sqlite3.
 
-Credits
-Content
-The text for section Y was copied from the Wikipedia article Z
-Media
-The photos used in this site were obtained from ...
-Acknowledgements
-I received inspiration for this project from X
+to run locally uncomment the env int settings.py and hit run.
